@@ -33,12 +33,12 @@ def main():
     lnP_list = natural_log_power(data_in_use)
 
     # Calculating average temp and temp
-    Tsr = sum(record["t1sr"] for record in data_in_use) / 5 + 273.15
+    Tsr = sum(record["t1sr"] for record in data_in_use) / len(data_in_use) + 273.15
     T = calc_temp(Tsr)
 
     # Calculating average x and y
-    x_av = sum(lnT_list) / 5
-    y_av = sum(lnP_list) / 5
+    x_av = sum(lnT_list) / len(lnT_list)
+    y_av = sum(lnP_list) / len(lnP_list)
 
     # Calculating x and y factors
     Sxx = x_factor(lnT_list, x_av)
