@@ -22,7 +22,7 @@ def temp_average(data):
     """
     for record in data:
         # Calculate the sum of temperatures (average can be added if needed)
-        record["t1sr"] = sum(record["t1"]) / 5
+        record["t1sr"] = sum(record["t1"]) / len(record["t1"])
 
 
 def temp_average_kelvin(data):
